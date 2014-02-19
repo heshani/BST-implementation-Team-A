@@ -5,7 +5,10 @@ Thought it would be easy if we all follow 1 common way to declare variables, cla
 	public class BinaryTree{}
 	class Node{}
 
+	Node leftChild;
+	Node rightChid;
 	int ISBN;
 	String bookTitle, firstName, surName;
+
 
 Happy :) coding.......
