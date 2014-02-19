@@ -1,0 +1,42 @@
+public void insertNode(int ISBN,String bookTitle, String firstName, String surName){
+		
+		Node newNode =new Node(ISBN,bookTitle,firstName,surName);
+		
+		if(root==null){
+			
+			root=newNode;
+			
+		}else {
+			
+			Node tempNode=root;
+			
+			Node parent;
+			
+			while(true){
+				
+				parent=tempNode;
+				
+				if(ISBN < tempNode.ISBN){
+					
+					tempNode = tempNode.leftChild;
+					
+					if(tempNode==null){
+						
+						parent.leftChild=newNode;
+						
+						return;
+					}
+				}else{
+					
+					tempNode=tempNode.rightChild;
+					
+					if (tempNode==null){
+						parent.rightChild = newNode;
+						return;
+					}
+				}
+				
+			}
+		}
+		
+	}
