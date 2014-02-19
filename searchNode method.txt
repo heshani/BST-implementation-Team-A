@@ -1,0 +1,31 @@
+public Node searchNode(int ISBN)
+{
+	Node tempNode = root;
+
+	while (tempNode.ISBN != ISBN)
+	{
+		if (ISBN < tempNode.ISBN)
+		{
+			tempNode = tempNode.leftChild;
+		}
+	        	else
+	        	{
+	        		tempNode = tempNode.rightChild;
+	        	}
+
+
+	       	 if (tempNode == null)
+	        	{
+	       	 	return null;
+	        	}
+
+	     }
+
+        	return tempNode;
+}
+
+//inside main()
+
+/****** 	System.out.println("Searching for book with ISBN: 50");
+    	System.out.println(theTree.searchNode(50));
+******/
