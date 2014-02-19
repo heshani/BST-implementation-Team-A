@@ -14,7 +14,5 @@ class Node {
 		this.surName=surName;
 	}
 	
-	public String toString(){
-		return bookTitle +" has an ISBN " + ISBN;
-		
+	
 	}
