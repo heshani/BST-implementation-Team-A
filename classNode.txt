@@ -1,0 +1,20 @@
+class Node {
+	int ISBN;
+	String bookTitle;
+	String firstName;
+	String surName;
+	
+	Node leftChild;
+	Node rightChild;
+	
+	Node(int ISBN, String bookTitle, String firstName, String surName){
+		this.ISBN=ISBN;
+		this.bookTitle=bookTitle;
+		this.firstName=firstName;
+		this.surName=surName;
+	}
+	
+	public String toString(){
+		return bookTitle +" has an ISBN " + ISBN;
+		
+	}
