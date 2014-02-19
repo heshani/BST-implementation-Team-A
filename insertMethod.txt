@@ -1,4 +1,12 @@
-public void insertNode(int ISBN,String bookTitle, String firstName, String surName){
+public class BinarySearchTree
+{
+
+	Node root;
+	
+	public void insertNode(int ISBN,String bookTitle, String firstName, String surName)
+	{
+
+		Node root;
 		
 		Node newNode =new Node(ISBN,bookTitle,firstName,surName);
 		
@@ -40,3 +48,4 @@ public void insertNode(int ISBN,String bookTitle, String firstName, String surNa
 		}
 		
 	}
+}//end of class BinarySearchTree
