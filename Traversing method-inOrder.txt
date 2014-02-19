@@ -1,0 +1,11 @@
+public void inOrderTraverseTree(Node tempNode)
+{
+	  if (tempNode != null)
+	  {
+	 	inOrderTraverseTree(tempNode.leftChild);
+
+	 	System.out.println(tempNode);
+
+	        	inOrderTraverseTree(tempNode.rightChild);
+        	}
+}
