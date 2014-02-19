@@ -1,0 +1,11 @@
+Hi everyone.. :p
+
+Thought it would be easy if we all follow 1 common way to declare variables, classes etc..
+
+	public class BinaryTree{}
+	class Node{}
+
+	int ISBN;
+	String bookTitle, firstName, surName;
+
+Happy :) coding.......
