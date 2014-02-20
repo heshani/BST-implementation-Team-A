@@ -1,3 +1,9 @@
+/**** Date:20.02.2014
+Programme:Binary Search Tree classNode
+Programmer's Name:Piumee Senevirathne
+Description:This method shows how to implement nodes in a binary search tree. 
+****/
+
 class Node {
 	int ISBN;
 	String bookTitle;
