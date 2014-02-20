@@ -1,0 +1,86 @@
+public boolean removeNode(int ISBN){
+	
+	Node tempNode=root;
+	Node parent=root;
+	
+	boolean isItAleftChild=true;
+	while(tempNode.ISBN!=ISBN){
+		
+		parent = tempNode;
+		
+		if(ISBN<tempNode.ISBN){
+			
+			isItAleftChild=true;
+			
+			tempNode=tempNode.leftChild;
+			
+		}
+		else{
+			isItAleftChild=false;
+			
+			tempNode=tempNode.rightChild;
+			
+		}
+		if(tempNode==null)// node not found
+			return false;
+	}
+	if(tempNode.leftChild==null && (tempNode.rightChild){
+		
+		if(tempNode==root){
+			root==null
+			
+		}else if(isItAleftChild){
+			
+			parent.leftChild=null;
+					
+		}else{
+			parent.rightChild=null;
+			
+		}
+		
+	}
+	else if (tempNode.rightChild==null){
+		if(tempNode==root)
+			root=tempNode.leftChild;
+		
+		else (isItAleftChild)
+		parent.leftChild=tempNode.leftChild;
+		
+		else parent.rightChlild=tempNode.leftChild;
+		
+	}
+
+
+	else if (tempNode.leftChild == null) 
+	{
+		if (tempNode == root)
+	                	root = tempNode.rightChild;
+	 
+	           	else if (isItALeftChild)
+	                	parent.leftChild = tempNode.rightChild;
+	 
+	            	else
+	                	parent.rightChild = tempNode.rightChild;
+	 
+	}	
+	 
+	else 
+	{
+	 
+	            	Node replacement = getReplacementNode(tempNode);
+	 
+		if (tempNode == root)
+	               	 root = replacement;
+
+		else if (isItALeftChild)
+	                	parent.leftChild = replacement;
+		
+		else
+	                	parent.rightChild = replacement;
+		replacement.leftChild = tempNode.leftChild;
+	}	 
+	return true;
+}
+	
+		
+}
