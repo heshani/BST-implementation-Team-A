@@ -1,3 +1,9 @@
+
+/**** Date:20.02.2014
+Programme: Binary Delete Tree Implementation
+Programmer's Name: Ashvini Navaratne
+Description: removeNode method will delete the given ISBN node.
+****/
 public boolean removeNode(int ISBN){
 	
 	Node tempNode=root;
