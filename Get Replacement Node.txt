@@ -1,7 +1,7 @@
-/**** Date:
-Programme:
-Programmer's Name:
-Description:
+/**** Date:20.02.2014
+Programme:Binary Search Tree getReplacementNode
+Programmer's Name:Himashika Dissanayake
+Description:This method shows how to change nodes to a bnary search tree.
 ****/
 
 public Node
