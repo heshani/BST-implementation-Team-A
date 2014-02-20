@@ -1,0 +1,26 @@
+public Node
+
+getReplacementNode(Node replacedNode) 
+{
+	 
+	Node replacementParent = replacedNode;
+	Node replacement = replacedNode;
+	Node tempNode = replacedNode.rightChild;
+	
+	while (tempNode != null) 
+	{
+		replacementParent = replacement;
+		replacement = tempNode;
+		tempNode = tempNode.leftChild;
+	}
+	
+
+	if (replacement != replacedNode.rightChild) 
+	{
+		replacementParent.leftChild = replacement.rightChild;
+		replacement.rightChild = replacedNode.rightChild;
+	}
+	
+
+	return replacement;
+}
