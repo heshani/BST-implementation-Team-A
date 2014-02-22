@@ -1,7 +1,6 @@
-
 /**** Date:22.02.2014
 Programme:Binary Search Tree insertMethod
-Programmer's Name:Sachithths Jayaweera
+Programmer's Name:Sachiththa Jayaweera
 Description:This method shows how to insert nodes into a binary search tree. 
 ****/
 
