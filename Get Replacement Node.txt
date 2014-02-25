@@ -1,0 +1,32 @@
+/**** Date:20.02.2014
+Programme:Binary Search Tree getReplacementNode
+Programmer's Name:Himashika Dissanayake
+Description:This method shows how to change nodes from a binary search tree. Then it will replace the book to the correct place. 
+****/
+
+public Node
+
+getReplacementNode(Node replacedNode) 
+{
+	 
+	Node replacementParent = replacedNode;
+	Node replacement = replacedNode;
+	Node tempNode = replacedNode.rightChild;
+	
+	while (tempNode != null) 
+	{
+		replacementParent = replacement;
+		replacement = tempNode;
+		tempNode = tempNode.leftChild;
+	}
+	
+
+	if (replacement != replacedNode.rightChild) 
+	{
+		replacementParent.leftChild = replacement.rightChild;
+		replacement.rightChild = replacedNode.rightChild;
+	}
+	
+
+	return replacement;
+}

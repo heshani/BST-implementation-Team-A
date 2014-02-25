@@ -1,3 +1,10 @@
+/***	Date: 19.02.2014.
+	Programme: BinarySearchTree implementation.
+	Programmer's Name: Heshani Unamboowe.
+	Description: searchNode method will find the node with the relevent ISBN(00153) and 
+		     will return d ISBN and the title of d book.
+***/
+
 public Node searchNode(int ISBN)
 {
 	Node tempNode = root;
@@ -26,6 +33,6 @@ public Node searchNode(int ISBN)
 
 //inside main()
 
-/****** 	System.out.println("Searching for book with ISBN: 50");
-    	System.out.println(theTree.searchNode(50));
+/****** 	System.out.println("Searching for book with ISBN: 00153");
+    	System.out.println(theTree.searchNode(00153));
 ******/
