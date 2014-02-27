@@ -42,15 +42,15 @@ public class BinarySearchTree
 
 
 
-		Node newNode =new Node(ISBN,bookTitle,firstName,surName);
+		Node newNode =new Node(ISBN,bookTitle,firstName,surName); // make a new node
 
-		if(root==null){
+		if(root==null){  // check whether there is a root 
 
-			root=newNode;System.out.println("**Node "+ISBN+" is Root \n");
+			root=newNode;System.out.println("**Node "+ISBN+" is Root \n"); // if there is no root assign the new node as the root
 
 		}else {
 
-			Node tempNode=root;
+			Node tempNode=root; // start at the root
 
 			Node parent;
 
@@ -58,28 +58,28 @@ public class BinarySearchTree
 
 				parent=tempNode;
 
-				if(ISBN < tempNode.ISBN){
+				if(ISBN < tempNode.ISBN){ // check whether to go left
 
 					tempNode = tempNode.leftChild;
 
-					if(tempNode==null){
+					if(tempNode==null){ // checking whether it is the end of line
 
-						parent.leftChild=newNode;System.out.println("**Node "+ISBN+" is left child of Node "+parent.ISBN+"\n");
+						parent.leftChild=newNode;System.out.println("**Node "+ISBN+" is left child of Node "+parent.ISBN+"\n"); // insert as the left child
 
 						return;
-					}
-				}else{
+					} // end if 'go left?'
+				}else{ // go right?
 
 					tempNode=tempNode.rightChild;
 
-					if (tempNode==null){
-						parent.rightChild = newNode;System.out.println("**Node "+ISBN+" is right child of Node "+parent.ISBN+"\n");
+					if (tempNode==null){ // checking whether it is the end of line
+						parent.rightChild = newNode;System.out.println("**Node "+ISBN+" is right child of Node "+parent.ISBN+"\n"); // insert as the right child
 						return;
-					}
-				}
+					} // end 'go right' 
+				} // end while
 
-			}
-		}
+			} // else not root
+		} // end insertNode
 
 
 
