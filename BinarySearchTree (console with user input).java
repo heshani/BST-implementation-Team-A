@@ -2,8 +2,8 @@
  * @(#)Text1.java
  *
  *
- * @author
- * @version 1.00 2014/2/19
+ * @author heshani
+ * @version 1.00 2014/2/25
  */
 import java.io.*;
 
@@ -33,7 +33,7 @@ class Node
 
 }
 
-public class NewBST
+public class BinarySearchTree
 {
 		Node root;
 
@@ -243,7 +243,7 @@ public class NewBST
 	public static void main(String args[])
 	{
 
-		NewBST theTree=new NewBST();
+		BinarySearchTree theTree=new BinarySearchTree();
 
 
 		try
