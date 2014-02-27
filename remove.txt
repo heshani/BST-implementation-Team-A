@@ -31,7 +31,7 @@ public boolean removeNode(int ISBN){ /*passing the node(ISBN) to be removed*/
 		if(tempNode==null)     /*node not found*/
 			return false;
 	}
-	if(tempNode.leftChild==null && (tempNode.rightChild){  /*if the node doesnt have any children*/
+	if(tempNode.leftChild==null && (tempNode.rightChild==null){  /*if the node doesnt have any children*/
 		
 		if(tempNode==root){
 			root==null     /*setting the root to null*/
