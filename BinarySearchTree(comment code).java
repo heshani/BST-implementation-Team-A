@@ -1,3 +1,10 @@
+// Date 	: 27.Feb.2014
+// Programme 	: BinarySearchTree Implementation
+// Author 	: Team'A'-Ashvini, Heshani, Himashika, Piumee, Sachiththa
+// Description  : BST is implemented with insert, delete and search operations that can be performed(run) in a 
+//                console window
+
+
 import java.io.*;
 import java.util.*;
 
@@ -36,15 +43,15 @@ public class BinarySearchTree
 
 
 
-		Node newNode =new Node(ISBN,bookTitle,firstName,surName);// make a new node
+		Node newNode =new Node(ISBN,bookTitle,firstName,surName);
 
-		if(root==null){ // check whether there is a root
+		if(root==null){
 
-			root=newNode;System.out.println("**Node "+ISBN+" is Root \n"); // if there is no root assign the new node as the root
+			root=newNode;System.out.println("**Node "+ISBN+" is Root \n");
 
 		}else {
 
-			Node tempNode=root; // start at the root
+			Node tempNode=root;
 
 			Node parent;
 
@@ -52,65 +59,65 @@ public class BinarySearchTree
 
 				parent=tempNode;
 
-				if(ISBN < tempNode.ISBN){ // check whether to go left
+				if(ISBN < tempNode.ISBN){
 
 					tempNode = tempNode.leftChild;
 
-					if(tempNode==null){ // checking whether it is the end of line
+					if(tempNode==null){
 
-						parent.leftChild=newNode;System.out.println("**Node "+ISBN+" is left child of Node "+parent.ISBN+"\n"); // insert as the left child
+						parent.leftChild=newNode;System.out.println("**Node "+ISBN+" is left child of Node "+parent.ISBN+"\n");
 
 						return;
-					} // end if 'go left?'
-				}else{ // go right?
+					}
+				}else{
 
 					tempNode=tempNode.rightChild;
 
-					if (tempNode==null){ // checking whether it is the end of line
-						parent.rightChild = newNode;System.out.println("**Node "+ISBN+" is right child of Node "+parent.ISBN+"\n"); // insert as the right child
+					if (tempNode==null){
+						parent.rightChild = newNode;System.out.println("**Node "+ISBN+" is right child of Node "+parent.ISBN+"\n");
 						return;
-					} // end 'go right'
-				} // end while
+					}
+				}
 
-			} // else not root
-		} // end insertNode
+			}
+		}
 
 
 
     }
 
 
-	public void inOrderTraverseTree(Node tempNode)
+	public void inOrderTraverseTree(Node tempNode)	//passes a node that is to be traversed
 	{
-	  	if (tempNode != null)
+	  	if (tempNode != null)	//checks whether the node has values
 	  	{
-	 		inOrderTraverseTree(tempNode.leftChild);
+	 		inOrderTraverseTree(tempNode.leftChild); 	//locates the left most child of tempNode
 
-	 		System.out.println(tempNode);
+	 		System.out.println(tempNode);	//visit tempNode
 
-	        inOrderTraverseTree(tempNode.rightChild);
-        }
+	        	inOrderTraverseTree(tempNode.rightChild);	//locates the right most child of tempNode
+        	}
 	}
 
 
 	public Node searchNode(int ISBN)
 	{
-		Node tempNode = root;
+		Node tempNode = root;	//starts to search from the top of the tree
 
 		while (tempNode.ISBN != ISBN)
 		{
-			if (ISBN < tempNode.ISBN)
+			if (ISBN < tempNode.ISBN) //checks whether the ISBN passed to the method is less than the ISBN of the current node
 			{
-				tempNode = tempNode.leftChild;
+				tempNode = tempNode.leftChild;	//moves the current node to the left
 			}
 	        else
 	        {
-	        	tempNode = tempNode.rightChild;
+	        	tempNode = tempNode.rightChild;	//moves the current node to the right
 	        }
 
-	        if (tempNode == null)
+	        if (tempNode == null)	//node not found
 	        {
-	       	 	return null;
+	       	 	return null;	
 	        }
 
 	     }
@@ -234,44 +241,42 @@ public class BinarySearchTree
 	public static void main(String args[])
 	{
 
-		BinarySearchTree theTree=new BinarySearchTree();
+		BinarySearchTree theTree=new BinarySearchTree();   //creating an object(theTree) from the class(BinarySearchTree)
 
 
 		try
 		{
 
-			DataInputStream in=new DataInputStream(System.in);
+			DataInputStream in=new DataInputStream(System.in);  //creating an instance of DataInputStream, to read user's input from the console window
 
 			int ii;
 
-						for(int i=1;i<=5;i++)
+						for(int i=1;i<=5;i++)	//5 records can be inserted
 						{
 							System.out.println("");
 							System.out.println("Record: "+i);
 
-
+							//reads user inputs
 							System.out.print("Insert ISBN: ");
-							int isbn=Integer.parseInt(in.readLine());
+							int isbn=Integer.parseInt(in.readLine());	//reads ISBN
 
 							System.out.print("Insert Book Title: ");
-							String title=in.readLine();
+							String title=in.readLine();	//reads bookTitle
 
 							System.out.print("Insert First Name: ");
-							String fName=in.readLine();
+							String fName=in.readLine();	//reads firstName
 
 							System.out.print("Insert Surname: ");
-							String lName=in.readLine();
+							String lName=in.readLine();	//reads surName
 
 
 
-							theTree.insertNode(isbn,title,fName,lName);
+							theTree.insertNode(isbn,title,fName,lName);	//insertNode method is called
 						}
 
 						System.out.println("Available nodes in the binary tree:");
-						theTree.inOrderTraverseTree(theTree.root);
-
-						//************************************************************************************
-
+						theTree.inOrderTraverseTree(theTree.root);	//display all records by the ISBN according to inOrder treaversal
+						
 
 						while(true)
 						{
@@ -286,9 +291,11 @@ public class BinarySearchTree
 
 							ii=Integer.parseInt(in.readLine());
 
+							//asks for the user's choice till the programme terminates
 							switch(ii)
 							{
-
+								
+								//inserts another new record 
 								case 1:
 
 
@@ -311,24 +318,24 @@ public class BinarySearchTree
 
 								break;
 
-
+								//search for a book
 								case 2:
 
 									System.out.println("\n");
 									System.out.print("Search book with ISBN: ");
-									isbn=Integer.parseInt(in.readLine());
-									System.out.println(theTree.searchNode(isbn));
+									isbn=Integer.parseInt(in.readLine());	//reads the ISBN to be searched
+									System.out.println(theTree.searchNode(isbn));	//searchNode method is called
 
 
 								break;
 
-
+								//delete a book
 								case 3:
 
 									System.out.println("\n");
 									System.out.print("Delete book with ISBN: ");
-									int disbn=Integer.parseInt(in.readLine());
-									System.out.println(theTree.removeNode(disbn));
+									int disbn=Integer.parseInt(in.readLine());	//reads the ISBN to be deleted
+									System.out.println(theTree.removeNode(disbn));	//removeNode method is called
 
 									System.out.println("");
 									System.out.println("Remaining nodes in the tree:");
@@ -337,15 +344,15 @@ public class BinarySearchTree
 								break;
 
 
-
+								//exit from the programme
 								case 0: System.exit(0);
 								break;
 
 
-							}//end switch
+							}//end of witch
 
 
-						}//end while
+						}//end of while
 
 
 		}
