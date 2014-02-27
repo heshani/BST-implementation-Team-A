@@ -43,15 +43,15 @@ public class BinarySearchTree
 
 
 
-		Node newNode =new Node(ISBN,bookTitle,firstName,surName);
+		Node newNode =new Node(ISBN,bookTitle,firstName,surName); //create a new node
 
-		if(root==null){
+		if(root==null){ //check whether there is a root
 
-			root=newNode;System.out.println("**Node "+ISBN+" is Root \n");
+			root=newNode;System.out.println("**Node "+ISBN+" is Root \n"); // if there is no root assign the new node as the root 
 
 		}else {
 
-			Node tempNode=root;
+			Node tempNode=root;// if there is a root start from there to search the position to insert the new node
 
 			Node parent;
 
@@ -59,32 +59,32 @@ public class BinarySearchTree
 
 				parent=tempNode;
 
-				if(ISBN < tempNode.ISBN){
+				if(ISBN < tempNode.ISBN){// check whether to go left
 
 					tempNode = tempNode.leftChild;
 
-					if(tempNode==null){
+					if(tempNode==null){ // check if the line ends
 
-						parent.leftChild=newNode;System.out.println("**Node "+ISBN+" is left child of Node "+parent.ISBN+"\n");
+						parent.leftChild=newNode;System.out.println("**Node "+ISBN+" is left child of Node "+parent.ISBN+"\n"); // insert the node as the left child
 
 						return;
 					}
-				}else{
+				}else{ // go right?
 
 					tempNode=tempNode.rightChild;
 
-					if (tempNode==null){
-						parent.rightChild = newNode;System.out.println("**Node "+ISBN+" is right child of Node "+parent.ISBN+"\n");
+					if (tempNode==null){ // check if the line ends
+						parent.rightChild = newNode;System.out.println("**Node "+ISBN+" is right child of Node "+parent.ISBN+"\n"); // insert the node as the right child
 						return;
-					}
-				}
+					} // end if
+				} //end else
 
-			}
-		}
+			} //end while
+		}// end else
 
 
 
-    }
+    } // end insertNode
 
 
 	public void inOrderTraverseTree(Node tempNode)	//passes a node that is to be traversed
