@@ -192,7 +192,7 @@ public class BinarySearchTree
 
 			if (tempNode == root)          /*if the temp node is equal to root it should ne replaced by roots right child*/       
 	        root = replacement;
-
+                                                                                                                                             
 			else if (isItALeftChild)
 	        parent.leftChild = replacement;      /*left child is equal to the replacement*/
 
@@ -205,29 +205,29 @@ public class BinarySearchTree
 	}
 
 
-	public Node getReplacementNode(Node replacedNode)
+	public Node getReplacementNode(Node replacedNode) 
 	{
 
-		Node replacementParent = replacedNode;
+		Node replacementParent = replacedNode; 
 		Node replacement = replacedNode;
-		Node tempNode = replacedNode.rightChild;
-
-		while (tempNode != null)
+		Node tempNode = replacedNode.rightChild; /*right child of the replaced node eaqals to temperary node*/
+		
+		while (tempNode != null)/*no temperary node*/
 		{
-			replacementParent = replacement;
-			replacement = tempNode;
-			tempNode = tempNode.leftChild;
+			replacementParent = replacement; /*parent replacement eaqals to replacement*/
+			replacement = tempNode;   /*replacement eaqals to temperary node*/
+			tempNode = tempNode.leftChild; /*temperary node eaqals left child of the temperary node*/
 		}
 
 
-		if (replacement != replacedNode.rightChild)
-		{
-			replacementParent.leftChild = replacement.rightChild;
-			replacement.rightChild = replacedNode.rightChild;
+		if (replacement != replacedNode.rightChild) /*if replacement is eaqals to right child of the replaced node*/
+		{                                                         
+			replacementParent.leftChild = replacement.rightChild; /*left child of the parent node replacement eaqals to right child of replacement*/
+			replacement.rightChild = replacedNode.rightChild;/*right child of the replacement eaqals to right child of replaced node*/
 		}
 
 
-		return replacement;
+		return replacement;  /*replacement return*/
 	}
 
 
