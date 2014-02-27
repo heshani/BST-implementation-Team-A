@@ -121,87 +121,87 @@ public class BinarySearchTree
 
 
 
-	public boolean removeNode(int ISBN)
+	public boolean removeNode(int ISBN)   /*passing the node(ISBN) to be removed*/
 	{
 		Node tempNode = root;
 		Node parent = root;
 
 
-		boolean isItALeftChild = true;
+		boolean isItALeftChild = true;  /* looking the node to the left*/
 
 
-    	while (tempNode.ISBN != ISBN)
+    	while (tempNode.ISBN != ISBN)   /*while loop runs till the exact node is found*/
 		{
 			parent = tempNode;
 
-	        if (ISBN < tempNode.ISBN)
+	        if (ISBN < tempNode.ISBN)  /*looking for the node in left side*/
 			{
-				isItALeftChild = true;
-	            tempNode = tempNode.leftChild;
+				isItALeftChild = true; /*setting to true*/
+	            tempNode = tempNode.leftChild;   /*setting the the temp node to the temp node of the left child*/
 			}
-			else
+			else                           /* if the node is not in the left side looking for the right side*/  
 			{
-				isItALeftChild = false;
-				tempNode = tempNode.rightChild;
+				isItALeftChild = false;      /*not a left child*/
+				tempNode = tempNode.rightChild; /*setting the the temp node to the temp node of the right child*/
 			}
 
-			if (tempNode == null)
+			if (tempNode == null)       /*node not found*/
 	    		return false;
 		}
 
 
-		if (tempNode.leftChild == null && tempNode.rightChild == null)
+		if (tempNode.leftChild == null && tempNode.rightChild == null) /*if the node doesnt have any children*/
 		{
 			if (tempNode == root)
-	        	root = null;
+	        	root = null;                 /*setting the root to null*/
 
 			else if (isItALeftChild)
-	            parent.leftChild = null;
+	            parent.leftChild = null;        /*setting to null (deleting) if they do not have any children*/
 
 			else
-	           	parent.rightChild = null;
+	           	parent.rightChild = null;   /*setting to null (deleting) if they do not have any children*/
 	 	}
 
-	 	else if (tempNode.rightChild == null)
+	 	else if (tempNode.rightChild == null)   /*no right child*/
 		{
 			if (tempNode == root)
-	        root = tempNode.leftChild;
+	        root = tempNode.leftChild;            /*root is equal to temp node left child*/
 
 			else if (isItALeftChild)
-	        parent.leftChild = tempNode.leftChild;
+	        parent.leftChild = tempNode.leftChild;  /*parent left child is equal to temp node left child*/
 
 	       	else
-	        parent.rightChild = tempNode.leftChild;
+	        parent.rightChild = tempNode.leftChild;  /*parent right child is equal to temp node left child*/
 	 	}
 
-		else if (tempNode.leftChild == null)
+		else if (tempNode.leftChild == null)  /*no left child*/
 		{
-			if (tempNode == root)
-	        root = tempNode.rightChild;
+			if (tempNode == root) 
+	        root = tempNode.rightChild;         /*root is equal to temp node right child*/
 
 	       	else if (isItALeftChild)
-	        parent.leftChild = tempNode.rightChild;
+	        parent.leftChild = tempNode.rightChild;  /*parent left child is equal to temp node right child*/
 
 	        else
-	        parent.rightChild = tempNode.rightChild;
+	        parent.rightChild = tempNode.rightChild;    /*parent right child is equal to temp node right child*/
 		}
 
 		else
 		{
-			Node replacement = getReplacementNode(tempNode);
+			Node replacement = getReplacementNode(tempNode);  /*replacing node*/
 
-			if (tempNode == root)
+			if (tempNode == root)          /*if the temp node is equal to root it should ne replaced by roots right child*/       
 	        root = replacement;
 
 			else if (isItALeftChild)
-	        parent.leftChild = replacement;
+	        parent.leftChild = replacement;      /*left child is equal to the replacement*/
 
 			else
-	        parent.rightChild = replacement;
-			replacement.leftChild = tempNode.leftChild;
+	        parent.rightChild = replacement;      /*right child is equal to the replacement*/  
+			replacement.leftChild = tempNode.leftChild;  /*replacement has a left child it is needed to be set as temp node left child*/
 		}
 
-		return true;
+		return true;         /*returning true(boolean)*/
 	}
 
 
