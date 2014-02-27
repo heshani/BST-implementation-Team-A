@@ -4,7 +4,9 @@ Programmer's Name: Ashvini Navaratne
 Description: removeNode method will delete the given ISBN node.
 ****/
 
-public boolean removeNode(int ISBN){ /*passing the node(ISBN) to be removed*/
+
+public boolean removeNode(int ISBN) /*passing the node(ISBN) to be removed*/
+ { 
 	
 	Node tempNode=root;
 	Node parent=root;
@@ -22,7 +24,7 @@ public boolean removeNode(int ISBN){ /*passing the node(ISBN) to be removed*/
 			tempNode=tempNode.leftChild; /*setting the the temp node to the temp node of the left child*/
 			
 		}
-		else{                        /* if the node is not in the left side looking for the right side*/    
+		else{                           /* if the node is not in the left side looking for the right side*/    
 			isItAleftChild=false;  /*not a left child*/
 			
 			tempNode=tempNode.rightChild; /*setting the the temp node to the temp node of the right child*/
@@ -85,9 +87,10 @@ public boolean removeNode(int ISBN){ /*passing the node(ISBN) to be removed*/
 		else
 	                	parent.rightChild = replacement;    /*right child is equal to the replacement*/     
 		                replacement.leftChild = tempNode.leftChild; /*replacement has a left child it is needed to be set as temp node left child*/
-	}	 
+	}
+	
 	return true;      /*returning true(boolean)*/
-}
+  }
 	
 		
 }
