@@ -7,27 +7,27 @@
  */
 import java.io.*;
 
-class Node
+class Node // create node class
 {
 	int ISBN;
 	String bookTitle;
 	String firstName;
 	String surName;
 
-	Node leftChild;
-	Node rightChild;
+	Node leftChild; // Left child node
+	Node rightChild; // Right child node
 
-	Node(int ISBN, String bookTitle, String firstName, String surName)
+	Node(int ISBN, String bookTitle, String firstName, String surName) // Creat a constructor
 	{
-		this.ISBN=ISBN;
+		this.ISBN=ISBN; // Assign new values
 		this.bookTitle=bookTitle;
 		this.firstName=firstName;
 		this.surName=surName;
-	}
+	} // End of node class
 
 	public String toString()
 	{
-		return "ISBN "+ISBN+" of book "+bookTitle+" is written by: "+firstName+" "+surName;
+		return "ISBN "+ISBN+" of book "+bookTitle+" is written by: "+firstName+" "+surName; // return the assigned values  
 	}
 
 
