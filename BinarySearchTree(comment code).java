@@ -1,4 +1,3 @@
-
 import java.io.*;
 import java.util.*;
 
@@ -28,7 +27,7 @@ class Node
 
 }
 
-public class XXX
+public class BinarySearchTree
 {
 		Node root;
 
@@ -235,7 +234,7 @@ public class XXX
 	public static void main(String args[])
 	{
 
-		XXX theTree=new XXX();
+		BinarySearchTree theTree=new BinarySearchTree();
 
 
 		try
